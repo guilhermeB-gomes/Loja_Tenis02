@@ -41,7 +41,7 @@ window.addEventListener("scroll", function () {
 document.addEventListener('DOMContentLoaded', function () {
   // Selecionar todos os botões de filtro
   const filterButtons = document.querySelectorAll('.filter-btn');
-  
+
   // Selecionar todos os itens de produtos
   const productItems = document.querySelectorAll('.product-item');
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function filterProducts(filter) {
     productItems.forEach(item => {
       const brand = item.getAttribute('data-brand').toLowerCase();
-      
+
       // Mostrar todos os produtos quando "all" é selecionado, ou produtos correspondentes à marca
       if (filter === 'all' || brand === filter) {
         item.style.display = ''; // Exibe o produto
@@ -64,13 +64,13 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
       // Remove a classe 'active' de todos os botões
       filterButtons.forEach(btn => btn.classList.remove('active'));
-      
+
       // Adiciona a classe 'active' ao botão clicado
       this.classList.add('active');
-      
+
       // Obter o valor do filtro
       const filter = this.getAttribute('data-filter');
-      
+
       // Aplicar o filtro
       filterProducts(filter);
     });
