@@ -38,3 +38,29 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+document.addEventListener('DOMContentLoaded', function () {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const productItems = document.querySelectorAll('.product-item');
+
+  // Adiciona um evento de clique a cada botão de filtro
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remove a classe 'active' de todos os botões
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      // Adiciona a classe 'active' ao botão clicado
+      button.classList.add('active');
+
+      const filter = button.textContent.trim().toLowerCase();
+
+      // Mostra ou oculta os itens de produtos com base no filtro
+      productItems.forEach(item => {
+        const brand = item.getAttribute('data-brand').toLowerCase();
+        if (filter === 'all' || filter === brand) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
