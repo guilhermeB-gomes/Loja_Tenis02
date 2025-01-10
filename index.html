@@ -235,37 +235,19 @@
 
           <h2 class="h2 section-title">Bestsellers Products</h2>
 
-          <ul class="filter-list">
-
-            <li>
-              <button class="filter-btn  active">All</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Nike</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Adidas</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Puma</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Bata</button>
-            </li>
-
-            <li>
-              <button class="filter-btn">Apex</button>
-            </li>
-
-          </ul>
+           <!-- Filtro -->
+    <ul class="filter-list">
+      <li><button class="filter-btn active" data-filter="all">All</button></li>
+      <li><button class="filter-btn" data-filter="nike">Nike</button></li>
+      <li><button class="filter-btn" data-filter="adidas">Adidas</button></li>
+      <li><button class="filter-btn" data-filter="puma">Puma</button></li>
+      <li><button class="filter-btn" data-filter="bata">Bata</button></li>
+      <li><button class="filter-btn" data-filter="apex">Apex</button></li>
+    </ul>
 
           <ul class="product-list">
 
-            <li class="product-item">
+            <li class="product-item" data-brand="nike">
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
@@ -329,7 +311,7 @@
               </div>
             </li>
 
-            <li class="product-item">
+            <li class="product-item" data-brand="nike">
               <div class="product-card" tabindex="0">
 
                 <figure class="card-banner">
