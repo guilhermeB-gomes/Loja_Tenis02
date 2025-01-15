@@ -6,9 +6,12 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: black;
+}
 main{
     width: 98%;
-    background: white;
+    background:hsl(0, 0%, 27%);
     margin: 60px auto;
     font-family: sans-serif;
 }
@@ -28,6 +31,7 @@ header ul li{
     font-size: 20px;
     border-radius: 35px;
     /*background: red;*/
+    background-color: hsl(0, 0%, 100%);;
 
 }
 header ul li a{
