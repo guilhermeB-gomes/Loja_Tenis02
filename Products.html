@@ -1,230 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-	<meta charset="UTF-8">
-	<title>Filter Product</title>
-	<link rel="stylesheet" type="text/css" href="fontawesome-5/fontawesome-css/all.css">
-	<link rel="stylesheet" type="text/css" href="./assets/css/products.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtragem de Tênis</title>
+  <link rel="stylesheet" href="./assets/css/products.css">
 </head>
 <body>
 
-	<main>
-		<header>
-			<ul class="indicator">
-				<li data-filter="all" class="active"><a href="#">All</a></li>
-				<li data-filter="Blazer"><a href="#">Blazzer</a></li>
-				<li data-filter="Watch"><a href="#">Watch</a></li>
-				<li data-filter="Shoes"><a href="#">Shoes</a></li>
-				<li data-filter="Mobile"><a href="#">Mobiles</a></li>
-				<li data-filter="Accessories"><a href="#">Accessories</a></li>
-			</ul>
-			<div class="filter-condition">
-				<span>View As a</span>
-				<select name="" id="select">
-					<option value="Default">Default</option>
-					<option value="LowToHigh">Low to high</option>
-					<option value="HighToLow">High to low</option>
-				</select>
-			</div>
-		</header>
-		<div class="product-field">
-			<ul class="items">
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/wa1.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Watch</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$45.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/bz1.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Blazer</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$35.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/wa2.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Watch</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$40.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/bz2.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Blazer</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$42.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/wa3.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Watch</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$46.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/bz4.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Blazer</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$55.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/so.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Shoes</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$25.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/samsung.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Mobile</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$20.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/so1.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Shoes</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$15.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/so2.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Shoes</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$22.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/one.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Mobile</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$33.78</h4>
-				</li>
-				<li data-category="" data-price="">
-					<picture>
-						<img src="image/so3.png" alt="">
-					</picture>
-					<div class="detail">
-						<p class="icon">
-						   <span><i class="far fa-heart"></i></span>
-						   <span><i class="far fa-share-square"></i></span>
-						   <span><i class="fas fa-shopping-basket"></i></span>
-						</p>
-						<strong>Shoes</strong>
-						<span>Lorem, ipsum dolor sit amet consectetur.</span>
-						<small>Buy now</small>
-					</div>
-					<h4>$44.78</h4>
-				</li>
-			</ul>
-		</div>
-	</main>
-	
+  <div class="container">
+    <!-- Filtro de Categorias -->
+    <div class="filter">
+      <h2>Categorias</h2>
+      <button class="filter-btn" onclick="filterProducts('todos')">Todos</button>
+      <button class="filter-btn" onclick="filterProducts('esporte')">Esporte</button>
+      <button class="filter-btn" onclick="filterProducts('casual')">Casual</button>
+      <button class="filter-btn" onclick="filterProducts('futebol')">Futebol</button>
+      <button class="filter-btn" onclick="filterProducts('running')">Running</button>
+      
+      <h2>Marcas</h2>
+      <button class="filter-btn" onclick="filterProducts('nike')">Nike</button>
+      <button class="filter-btn" onclick="filterProducts('adidas')">Adidas</button>
+      <button class="filter-btn" onclick="filterProducts('puma')">Puma</button>
+
+      <h2>Cores</h2>
+      <button class="filter-btn" onclick="filterProducts('preto')">Preto</button>
+      <button class="filter-btn" onclick="filterProducts('branco')">Branco</button>
+      <button class="filter-btn" onclick="filterProducts('azul')">Azul</button>
+      <button class="filter-btn" onclick="filterProducts('vermelho')">Vermelho</button>
+    </div>
+
+    <!-- Cards de Tênis -->
+    <div class="product-list">
+      <div class="product-card esporte nike preto">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Esportivo Nike Preto">
+        <h3>Tênis Esportivo Nike Preto</h3>
+        <p>R$ 299,90</p>
+      </div>
+      <div class="product-card casual adidas branco">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Casual Adidas Branco">
+        <h3>Tênis Casual Adidas Branco</h3>
+        <p>R$ 249,90</p>
+      </div>
+      <div class="product-card futebol puma vermelho">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Futebol Puma Vermelho">
+        <h3>Tênis Futebol Puma Vermelho</h3>
+        <p>R$ 349,90</p>
+      </div>
+      <div class="product-card running nike azul">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Running Nike Azul">
+        <h3>Tênis Running Nike Azul</h3>
+        <p>R$ 399,90</p>
+      </div>
+      <div class="product-card esporte adidas preto">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Esportivo Adidas Preto">
+        <h3>Tênis Esportivo Adidas Preto</h3>
+        <p>R$ 329,90</p>
+      </div>
+      <div class="product-card casual puma branco">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Casual Puma Branco">
+        <h3>Tênis Casual Puma Branco</h3>
+        <p>R$ 269,90</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/produto.js"></script>
 </body>
 </html>
-<script type="text/javascript" src="./assets/js/produto.js"></script>
