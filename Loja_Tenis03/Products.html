@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtragem de Tênis</title>
+  <link rel="stylesheet" href="./assets/css/products.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Filtro de Categorias -->
+    <div class="filter">
+      <h2>Categorias</h2>
+      <button class="filter-btn" onclick="filterProducts('todos')">Todos</button>
+      <button class="filter-btn" onclick="filterProducts('esporte')">Esporte</button>
+      <button class="filter-btn" onclick="filterProducts('casual')">Casual</button>
+      <button class="filter-btn" onclick="filterProducts('futebol')">Futebol</button>
+      <button class="filter-btn" onclick="filterProducts('running')">Running</button>
+      
+      <h2>Marcas</h2>
+      <button class="filter-btn" onclick="filterProducts('nike')">Nike</button>
+      <button class="filter-btn" onclick="filterProducts('adidas')">Adidas</button>
+      <button class="filter-btn" onclick="filterProducts('puma')">Puma</button>
+
+      <h2>Cores</h2>
+      <button class="filter-btn" onclick="filterProducts('preto')">Preto</button>
+      <button class="filter-btn" onclick="filterProducts('branco')">Branco</button>
+      <button class="filter-btn" onclick="filterProducts('azul')">Azul</button>
+      <button class="filter-btn" onclick="filterProducts('vermelho')">Vermelho</button>
+    </div>
+
+    <!-- Cards de Tênis -->
+    <div class="product-list">
+      <div class="product-card esporte nike preto">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Esportivo Nike Preto">
+        <h3>Tênis Esportivo Nike Preto</h3>
+        <p>R$ 299,90</p>
+      </div>
+      <div class="product-card casual adidas branco">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Casual Adidas Branco">
+        <h3>Tênis Casual Adidas Branco</h3>
+        <p>R$ 249,90</p>
+      </div>
+      <div class="product-card futebol puma vermelho">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Futebol Puma Vermelho">
+        <h3>Tênis Futebol Puma Vermelho</h3>
+        <p>R$ 349,90</p>
+      </div>
+      <div class="product-card running nike azul">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Running Nike Azul">
+        <h3>Tênis Running Nike Azul</h3>
+        <p>R$ 399,90</p>
+      </div>
+      <div class="product-card esporte adidas preto">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Esportivo Adidas Preto">
+        <h3>Tênis Esportivo Adidas Preto</h3>
+        <p>R$ 329,90</p>
+      </div>
+      <div class="product-card casual puma branco">
+        <img src="https://via.placeholder.com/200x200" alt="Tênis Casual Puma Branco">
+        <h3>Tênis Casual Puma Branco</h3>
+        <p>R$ 269,90</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/js/produto.js"></script>
+</body>
+</html>
