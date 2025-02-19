@@ -20,76 +20,46 @@ const shoeNum = document.querySelector(".shoe-num");
 const shoeTotal = document.querySelector(".shoe-total");
 
 //Id Variantes
-
 let id = 1;
 let colortype = 1;
 let shoe = 1;
 
-//shoe  details / data
-
+//shoe details / data
 const colors = [
-    [
-        "ae001b",
-        "#111111"
-    ],
-    [
-        "linear-gradient(0deg, orange, red)",
-        "#bda08e"
-    ],
-    [
-        "linear-gradient(0deg, #00b8ea 0%, #e6882d 50%, #e56da6 100%)",
-        "linear-gradient(0deg, #dae766, #b2afaa)"
-    ],
+    ["ae001b", "#111111"],
+    ["linear-gradient(0deg, orange, red)", "#bda08e"],
+    ["linear-gradient(0deg, #00b8ea 0%, #e6882d 50%, #e56da6 100%)", "linear-gradient(0deg, #dae766, #b2afaa)"],
 ];
 
 const prices = ["150", "250", "175"];
 
 const names = [
-    [
-        "Red Nike Jordan Max Aura 3",
-        "Black Nike Jordan Max Aura 3"
-    ],
-    [
-        "Black/Orange Nike Air Max 95",
-        "Beige/Gray Nike Air Max 95"
-    ],
-    [
-        "Colorful NIKE Jordan Delta 2 SP",
-        "Gray NIKE Jordan Delta 2 SP"
-    ],
+    ["Red Nike Jordan Max Aura 3", "Black Nike Jordan Max Aura 3"],
+    ["Black/Orange Nike Air Max 95", "Beige/Gray Nike Air Max 95"],
+    ["Colorful NIKE Jordan Delta 2 SP", "Gray NIKE Jordan Delta 2 SP"],
 ];
 
 const description = [
-    [
-        "Bring a piece of history to the city's urban streets as you walk intro Nike Jordan Max aura # men's sneakers. Inspired by the rich jordannian heritage, this model has the energy of basketball shoes and a look that changes the perception of the classic style.",
-    ],
-
-    [
-        "Nike Air Max 95 men's sneakers move you with the strength and fluidity inspired by the anatomy of the human body.The central sole forms the basis of these sneakers, while the structured side panels give a solid and stable construction.Flexible incisions in the sole allow your feet to move naturally.",
-
-    ],
-    [
-        "Jordan Delta 2 SP men's basketball shoes offer a fresh and fearless approach to the characteristics you want: durability, comfort and the attitude of the Jordan brand. The first model of Delta 2 sneakers, with the same idea, received redesigned lines and modified components.",
-    ],
+    ["Bring a piece of history to the city's urban streets as you walk intro Nike Jordan Max aura # men's sneakers. Inspired by the rich jordannian heritage, this model has the energy of basketball shoes and a look that changes the perception of the classic style."],
+    ["Nike Air Max 95 men's sneakers move you with the strength and fluidity inspired by the anatomy of the human body.The central sole forms the basis of these sneakers, while the structured side panels give a solid and stable construction.Flexible incisions in the sole allow your feet to move naturally."],
+    ["Jordan Delta 2 SP men's basketball shoes offer a fresh and fearless approach to the characteristics you want: durability, comfort and the attitude of the Jordan brand. The first model of Delta 2 sneakers, with the same idea, received redesigned lines and modified components."],
 ];
 
 const ratings = [4, 5, 3];
-/*=== Functions ===*/ 
-/*=================*/ 
-//Retriving image from folder path 
 
-function getImage(imgType, shoe, colorType, id, extension){
-    return "img/" + 
-    imgType + "/shoe" + shoe + "-" +
-    colorType + "/img" + id + "." + extension;
+/*=== Functions ===*/
+/*=================*/
+//Retriving image from folder path 
+function getImage(imgType, shoe, colorType, id, extension) {
+    return "img/" + imgType + "/shoe" + shoe + "-" + colorType + "/img" + id + "." + extension;
 }
 
 //Reset Active state to buttons 
-function resetActive(element, elementClass, i) {
-    for (let i = 0; i < element.length; i++){
+function resetActive(element, elementClass, index) {
+    for (let i = 0; i < element.length; i++) {
         element[i].classList.remove(elementClass + "-active");
     }
-    element[i].classList.add(elementClass + "-active");
+    element[index].classList.add(elementClass + "-active");
 }
 
 //Fire Animations 
@@ -102,18 +72,18 @@ function animate(element, time, anim) {
 }
 
 //Assign colors to color buttons 
-function assignColors(i, shoe){
+function assignColors(i, shoe) {
     colorBtn[i].style.background = colors[shoe - 1][i];
 }
 
 //Set rating by filling out stars 
-function resetStars(shoe){
+function resetStars(shoe) {
     for (let i = 0; i < stars.length; i++) {
         stars[i].innerText = "star_outline";
     }
 
     //Adding the ratings
-    for (let i = 0; i < ratings[shoe]; i++){
+    for (let i = 0; i < ratings[shoe]; i++) {
         stars[i].innerText = "star";
     }
 }
@@ -126,14 +96,13 @@ for (let i = 0; i < sizes.length; i++) {
     });
 }
 
-/*Setting up all of the initial data 
-for the first shoen that loads */
+/*Setting up all of the initial data for the first shoe that loads */
 shoeTotal.innerText = "0" + pag.length; /*1 */
 shoeNum.innerText = "0" + shoe; /*2 */
 price.innerText = "$" + prices[0]; /*3 */
-resetStars(shoe - 1);/*4*/
-title.innerText = names[0][0];/*5*/
-desc.innerText = description[0];/*6*/
+resetStars(shoe - 1); /*4 */
+title.innerText = names[0][0]; /*5 */
+desc.innerText = description[0]; /*6 */
 
 /* changing images */
 for (let i = 0; i < thumb.length; i++) {
@@ -143,9 +112,7 @@ for (let i = 0; i < thumb.length; i++) {
         id = i + 1;
 
         /** Setting the main image to clicked thumbnail image */
-        img.src = getImage(
-            "showcase", shoe, colortype, id, "png"
-        );
+        img.src = getImage("showcase", shoe, colortype, id, "png");
 
         //adding the active class to the clicked thumbnail
         resetActive(thumb, "thumb", i);
@@ -155,7 +122,7 @@ for (let i = 0; i < thumb.length; i++) {
     });
 }
 
-for (let i = 0; i < colorBtn.length; i++){
+for (let i = 0; i < colorBtn.length; i++) {
     //Setting up colors to the color btn
     assignColors(i, shoe);
 
@@ -166,16 +133,12 @@ for (let i = 0; i < colorBtn.length; i++){
 
         //Change Showcase image 
         setTimeout(() => {
-            img.src = getImage(
-                "showcase", shoe, colortype, id, "png"
-            );
+            img.src = getImage("showcase", shoe, colortype, id, "png");
         }, 450);
 
         //Change Thumbnails
-        for (let i = 0; i < thumb.length; i++){
-            thumb[i].src = getImage(
-                "thumbs", shoe, colortype, i + 1, "jpg"
-            );
+        for (let i = 0; i < thumb.length; i++) {
+            thumb[i].src = getImage("thumbs", shoe, colortype, i + 1, "jpg");
         }
 
         //Set active class to clicked button 
@@ -192,46 +155,44 @@ for (let i = 0; i < colorBtn.length; i++){
 }
 
 /** ==== Slider ===== */
-function slider(shoe){
-   //change Showcase Image
-   setTimeout(() => {
-    img.src = getImage(
-        "showcase", shoe, colortype, id, "png"
-    );
-   }, 600);
-   //change Thumbnails
-   for (let i = 0; i < thumb.length; i++){
-    thumb[i].src = getImage(
-        "thumbs", shoe, colortype, i + 1, "jpg"
-    );
-   }
+function slider(shoe) {
+    //change Showcase Image
+    setTimeout(() => {
+        img.src = getImage("showcase", shoe, colortype, id, "png");
+    }, 600);
 
-   //changing the colors on the color buttons 
-   for (let i = 0; 1 < colorBtn.length; i++) {
-    assignColors(i, shoe);
-   }
-   //set active class to clicked
-   resetActive(pag, "pag", shoe - 1);
+    //change Thumbnails
+    for (let i = 0; i < thumb.length; i++) {
+        thumb[i].src = getImage("thumbs", shoe, colortype, i + 1, "jpg");
+    }
 
-   //Reassing all of the shoe data
-   desc.innerText = description[shoe - 1];
-   title.innerText = names[shoe - 1][colortype - 1];
-   price.innerText = "$" + prices[shoe - 1];
-   resetStars(shoe - 1);
-   shoeNum.innerText = "0" + shoe;
+    //changing the colors on the color buttons 
+    for (let i = 0; i < colorBtn.length; i++) {
+        assignColors(i, shoe);
+    }
 
-   //Adding all of the animations 
-   animate(img, 1550, "replace 1.5s ease-in");
-   animate(shadow, 1550, "shadow2 1.5s ease-in");
-   animate(titleOverlay, 850, "title 800ms ease");
+    //set active class to clicked pagination
+    resetActive(pag, "pag", shoe - 1);
+
+    //Reassign all of the shoe data
+    desc.innerText = description[shoe - 1];
+    title.innerText = names[shoe - 1][colortype - 1];
+    price.innerText = "$" + prices[shoe - 1];
+    resetStars(shoe - 1);
+    shoeNum.innerText = "0" + shoe;
+
+    //Adding all of the animations 
+    animate(img, 1550, "replace 1.5s ease-in");
+    animate(shadow, 1550, "shadow2 1.5s ease-in");
+    animate(titleOverlay, 850, "title 800ms ease");
 }
 
 //Previous shoe
 prev.addEventListener("click", () => {
-    //Descrement img id
+    //Decrement shoe id
     shoe--;
     /** Check if slide goes below the first, 
-     and resetr it to the last slide*/
+     and reset it to the last slide */
     if (shoe < 1) {
         shoe = pag.length;
     }
@@ -239,3 +200,27 @@ prev.addEventListener("click", () => {
     slider(shoe);
 });
 
+//Next Shoe
+next.addEventListener("click", () => {
+    //Increment shoe id 
+    shoe++;
+
+    /** Check if slider goes above the slides length,
+     * and reset it to the first */
+    if (shoe > pag.length) {
+        shoe = 1;
+    }
+    //Run the slider function
+    slider(shoe);
+});
+
+//pagination
+for (let i = 0; i < pag.length; i++) {
+    //Add click event for all pagination
+    pag[i].addEventListener("click", () => {
+        //Run the slider function
+        slider(i + 1);
+        //Set shoe id to clicked pagination index
+        shoe = i + 1;
+    });
+}
