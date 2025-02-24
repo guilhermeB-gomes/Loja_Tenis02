@@ -1,0 +1,154 @@
+:root {
+    --first-color: #f8f8f8;
+    --second-color: #e0e0e0;
+    --third-color: #d0d0d0;
+    --dark-color: #333;
+    --accent-color: #f1c40f;
+    --smaller-font-size: 12px;
+    --h3-font-size: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--first-color);
+}
+
+header {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 50%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--second-color);
+    background-color: var(--first-color);
+}
+
+section {
+    margin: 20px;
+}
+
+#filtros {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#filtros label {
+    font-weight: bold;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid var(--second-color);
+    background-color: var(--first-color);
+}
+
+#produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+.card__name {
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+.card__precis {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card__preci {
+    display: block;
+    text-align: center;
+}
+
+.card__preci--before {
+    font-size: var(--smaller-font-size);
+    color: var(--accent-color);
+    margin-bottom: .25rem;
+}
+
+.card__preci--now {
+    font-size: var(--h3-font-size);
+    font-weight: bold;
+}
+
+@media (max-width: 940px) {
+    header input {
+        width: 80%;
+    }
+
+    #produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    header input {
+        width: 90%;
+    }
+
+    #produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+}

@@ -29,20 +29,26 @@ const colors = [
     ["ae001b", "#111111"],
     ["linear-gradient(0deg, orange, red)", "#bda08e"],
     ["linear-gradient(0deg, #00b8ea 0%, #e6882d 50%, #e56da6 100%)", "linear-gradient(0deg, #dae766, #b2afaa)"],
+    ["linear-gradient(0deg, #ff7b00, #e50000)", "#0033ff"], // Cores para o quarto tênis (Novo)
+    ["linear-gradient(0deg, #c0c0c0, #2e2e2e)", "#8e8e8e"] // Cores para o quinto tênis (Novo)
 ];
 
-const prices = ["150", "250", "175"];
+const prices = ["150", "250", "175", "200", "220"]; // Preços
 
 const names = [
     ["Red Nike Jordan Max Aura 3", "Black Nike Jordan Max Aura 3"],
     ["Black/Orange Nike Air Max 95", "Beige/Gray Nike Air Max 95"],
     ["Colorful NIKE Jordan Delta 2 SP", "Gray NIKE Jordan Delta 2 SP"],
+    ["Nike Air Max SC Masculino", "Nike Zoom Freak 1 Blue"], // Novos tênis
+    ["Nike Air Force 1", "Nike Air Force 1 Low"]  // Novos tênis
 ];
 
 const description = [
     ["Bring a piece of history to the city's urban streets as you walk intro Nike Jordan Max aura # men's sneakers. Inspired by the rich jordannian heritage, this model has the energy of basketball shoes and a look that changes the perception of the classic style."],
     ["Nike Air Max 95 men's sneakers move you with the strength and fluidity inspired by the anatomy of the human body.The central sole forms the basis of these sneakers, while the structured side panels give a solid and stable construction.Flexible incisions in the sole allow your feet to move naturally."],
     ["Jordan Delta 2 SP men's basketball shoes offer a fresh and fearless approach to the characteristics you want: durability, comfort and the attitude of the Jordan brand. The first model of Delta 2 sneakers, with the same idea, received redesigned lines and modified components."],
+    ["Nike Zoom Freak 1 is a versatile basketball shoe, perfect for quick movements and durability. The shoe is designed for agility on the court."], // Descrição do novo tênis
+    ["Nike Air Force 1 is a timeless classic, providing comfort, style, and support for everyday use. A perfect combination of casual and athletic wear."] // Descrição do novo tênis
 ];
 
 const ratings = [4, 5, 3];
@@ -97,7 +103,7 @@ for (let i = 0; i < sizes.length; i++) {
 }
 
 /*Setting up all of the initial data for the first shoe that loads */
-shoeTotal.innerText = "0" + pag.length; /*1 */
+shoeTotal.innerText = "0" + 5; /* Atualize para o número total de tênis *//*1 */
 shoeNum.innerText = "0" + shoe; /*2 */
 price.innerText = "$" + prices[0]; /*3 */
 resetStars(shoe - 1); /*4 */
@@ -194,7 +200,7 @@ prev.addEventListener("click", () => {
     /** Check if slide goes below the first, 
      and reset it to the last slide */
     if (shoe < 1) {
-        shoe = pag.length;
+        shoe = 5;
     }
     //Run the slider function
     slider(shoe);
@@ -207,20 +213,20 @@ next.addEventListener("click", () => {
 
     /** Check if slider goes above the slides length,
      * and reset it to the first */
-    if (shoe > pag.length) {
+    if (shoe > 5) {
         shoe = 1;
     }
     //Run the slider function
     slider(shoe);
 });
-
-//pagination
-for (let i = 0; i < pag.length; i++) {
-    //Add click event for all pagination
+const totalShoes = 5; // Agora você tem 5 tênis
+// Pagination
+for (let i = 0; i < totalShoes; i++) { // A quantidade de páginas será igual ao número de tênis
     pag[i].addEventListener("click", () => {
-        //Run the slider function
+        // Chama a função slider() passando o número do tênis baseado na página clicada
         slider(i + 1);
-        //Set shoe id to clicked pagination index
+        // Define o número do tênis baseado no botão de paginação clicado
         shoe = i + 1;
     });
 }
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Tênis</title>
+    <link rel="stylesheet" href="filtro.css">
+</head>
+
+<body>
+    <header>
+        <h1>Loja de Tênis</h1>
+        <input type="text" id="search" placeholder="Pesquisar Tênis...">
+    </header>
+
+    <section id="filtros">
+        <label for="marca">Marca:</label>
+        <select id="marca">
+            <option value="">Selecione...</option>
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Puma">Puma</option>
+        </select>
+
+        <label for="cor">Cor:</label>
+        <select id="cor">
+            <option value="">Selecione...</option>
+            <option value="Preto">Preto</option>
+            <option value="Branco">Branco</option>
+            <option value="Azul">Azul</option>
+        </select>
+
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+            <option value="">Selecione...</option>
+            <option value="Esportivo">Esportivo</option>
+            <option value="Casual">Casual</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+
+        <!-- Novo filtro "Gênero" -->
+        <label for="genero">Gênero:</label>
+        <select id="genero">
+            <option value="">Selecione...</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Unissex">Unissex</option>
+        </select>
+    </section>
+
+    <section id="produtos">
+        <!-- Os produtos serão inseridos aqui com JavaScript -->
+    </section>
+
+    <script src="filtro.js"></script>
+</body>
+
+</html>
