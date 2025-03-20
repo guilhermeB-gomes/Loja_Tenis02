@@ -1,25 +1,23 @@
-:root {
-    --first-color: #f8f8f8;
-    --second-color: #e0e0e0;
-    --third-color: #d0d0d0;
-    --dark-color: #333;
-    --accent-color: #f1c40f;
-    --smaller-font-size: 12px;
-    --h3-font-size: 20px;
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--first-color);
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: var(--dark-color);
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+    position: relative;
 }
 
 header input {
@@ -28,39 +26,106 @@ header input {
     width: 50%;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid var(--second-color);
-    background-color: var(--first-color);
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
 }
 
-section {
-    margin: 20px;
+header button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
+header button:hover {
+    background-color: #e67e22;
+}
+
+/* Menu hamburguer */
+#menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+/* Menu lateral para mobile */
+#menu-mobile {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#menu-mobile ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu-mobile ul li {
+    margin: 15px 0;
+}
+
+#menu-mobile ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#menu-mobile ul li a:hover {
+    color: #f39c12;
+}
+
+/* Filtros */
 #filtros {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
 }
 
-#filtros label {
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.filter-group label {
+    margin-bottom: 5px;
+    font-size: 14px;
     font-weight: bold;
 }
 
-select {
-    padding: 10px;
-    font-size: 16px;
+.filter-group select {
+    padding: 8px;
+    font-size: 14px;
     border-radius: 5px;
-    border: 1px solid var(--second-color);
-    background-color: var(--first-color);
+    border: 1px solid #ccc;
 }
 
+/* Produtos */
 #produtos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     justify-items: center;
     margin-top: 20px;
+    padding: 0 20px;
 }
 
 .card {
@@ -68,8 +133,14 @@ select {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -83,65 +154,70 @@ select {
     margin-top: 10px;
 }
 
-.card p {
+.card__details {
     font-size: 14px;
     color: #555;
+    margin: 10px 0;
 }
 
-.card__name {
+.card__price {
+    font-size: 18px;
     font-weight: bold;
-    color: var(--dark-color);
+    color: #e67e22;
 }
 
-.card__precis {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
-.card__preci {
-    display: block;
-    text-align: center;
+.card button:hover {
+    background-color: #e67e22;
 }
 
-.card__preci--before {
-    font-size: var(--smaller-font-size);
-    color: var(--accent-color);
-    margin-bottom: .25rem;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    #filtros {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.card__preci--now {
-    font-size: var(--h3-font-size);
-    font-weight: bold;
-}
-
-@media (max-width: 940px) {
-    header input {
-        width: 80%;
+    .filter-group {
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     #produtos {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .card {
-        width: 150px;
-        padding: 15px;
+    /* Ajustar o botão favoritos no mobile */
+    header button {
+        top: 50%;
+        right: 10px;
+        position: fixed;
+        z-index: 1000;
     }
 
-    .card h3 {
-        font-size: 16px;
+    /* Mostrar o menu hamburguer */
+    #menu-btn {
+        display: block;
     }
 
-    .card p {
-        font-size: 12px;
+    /* Exibir menu lateral */
+    #menu-mobile.open {
+        display: block;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     header input {
-        width: 90%;
+        width: 80%;
     }
 
     #produtos {
@@ -149,6 +225,27 @@ select {
     }
 
     .card {
-        width: 100%;
+        max-width: 100%;
     }
+
+    /* Ajustar a largura do campo de pesquisa */
+    header input {
+        width: 90%;
+    }
+
+    #filtros {
+        gap: 5px;
+        flex-direction: column;
+    }
+
+    select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.logo {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    margin-right: 10px; /* Adiciona um pequeno espaço à direita da logo */
 }

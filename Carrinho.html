@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/img.ico" type="image/x-icon">
+    <link rel="stylesheet" href="carrinho.css">
+    <script defer src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="../script/menu.js" defer></script>
+    <script defer src="../script/Troca_Login.js"></script>
+    <title>Loja Barbeiro</title>
+</head>
+
+<body>
+
+    <header class="menu-desktop">
+        <div class="conteiner-header">
+            <div class="modalResp">
+                <button id="mostrarModal">
+                    <i class="ph ph-list"></i>
+                </button>
+
+
+
+                <div class="modalgeral">
+                    <div class="sabiduria">
+                        <a href="index.html">
+                            <p class="paginasResponsi">Home</p>
+                        </a>
+                        <a href="./Products.html">
+                            <p class="paginasResponsi">Produtos</p>
+                        </a>
+                        <a href="Servicos.html">
+                            <p class="paginasResponsi">Serviços</p>
+                        </a>
+                        <a href="Agendamento.html">
+                            <p class="paginasResponsi">Agendamento</p>
+                        </a>
+                    </div>
+                    <div class="modalfechar">
+                        <a href="">
+                            <button id="tan" id="fecharModal">Fechar</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="itemIMG">
+                <img src="../img/img.jpg" alt="Barbearia" height="100px">
+            </div>
+            <div class="item">
+                <nav class="menu">
+
+                    <a href="./index.html">Home</a>
+                    <a href="sobre.html">Sobre</a>
+                    <a href="filtro.html">Produtos</a>
+                    <a href="comparacao.html">Shop</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contato.html">Contato</a>
+                </nav>
+            </div>
+
+
+            <div class="containeravatar">
+
+                <div class="user-avatar" id="user-avatar" onclick="toggleDropdown()">
+                    <span id="user-initials"></span>
+                    <div class="dropdown-content" id="dropdown-content" style="display: none;">
+                        <p id="user-name"></p>
+
+                        <hr>
+
+                        <div class="menu-paginas">
+                            <!-- Faz a mudança de pagina o agendamentos-link -->
+                            <a href="#" class="menu-item" id="agendamentos-link">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <div>
+                                    <span>Agendamentos</span>
+                                    <small>Seu histórico de agendamentos</small>
+                                </div>
+                            </a>
+                            <a href="./Paginas_Modal/meus-dados.html" class="menu-item">
+                                <ion-icon name="person-outline"></ion-icon>
+                                <div>
+                                    <span>Meus dados</span>
+                                    <small>Seus dados pessoais</small>
+                                </div>
+                            </a>
+                            <a href="./Paginas_Modal/Trocarsenha.html" class="menu-item">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                <div>
+                                    <span>Alterar senha</span>
+                                    <small>Gerencie a senha de sua conta</small>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="social-buttons">
+                            <a href="" class="social-button facebook" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/capitaobarbeiro/" class="social-button instagram"
+                                target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="" class="social-button whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+
+                        <button id="logout-button" onclick="logout()">Sair</button>
+                    </div>
+                </div>
+                <a href="login.html">
+                    <butto class="button-login">Entrar</button>
+                </a>
+            </div>
+
+
+        </div>
+    </header>
+
+    <div class="container scroll">
+        <div id="root">
+            <!-- Produtos serão exibidos aqui -->
+        </div>
+
+        <div class="sidebar">
+            <div class="head">
+                <p>Carrinho</p>
+                <div class="cart">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <p id="count">0</p>
+                </div>
+            </div>
+
+            <div class="cartitemscroll">
+                <div id="cartItem">Produtos</div>
+            </div>
+
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">R$ 0.00</h2>
+                <button onclick="sendToWhatsApp()">Enviar para WhatsApp</button>
+            </div>
+        </div>
+    </div>
+    <script src="carrinho.js"></script>
+
+
+    <!-- Importa as bibliotecas do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        // Configurações do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCviZ-ql0st4L0Ii3BTIg1xgin5IGJeBt0",
+            authDomain: "capitaobarbeiro-5b7be.firebaseapp.com",
+            projectId: "capitaobarbeiro-5b7be",
+            storageBucket: "capitaobarbeiro-5b7be.appspot.com",
+            messagingSenderId: "1013857162216",
+            appId: "1:1013857162216:web:d3d74fa8be916691174a5d",
+            measurementId: "G-DMR6NG64B3"
+        };
+        // Inicializa o Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+</body>
+
+</html>

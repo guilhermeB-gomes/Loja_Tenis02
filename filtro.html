@@ -1,52 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja de Tênis</title>
     <link rel="stylesheet" href="filtro.css">
 </head>
-
 <body>
     <header>
+        <a href="index.html">
+        <!-- Logo -->
+        <img src="./assets/images/sapato.png" alt="Logo da Loja de Tênis" class="logo">
+        </a>
+
         <h1>Loja de Tênis</h1>
         <input type="text" id="search" placeholder="Pesquisar Tênis...">
+        <!-- Botão de Favoritos -->
+        <button id="favoritos-btn">Favoritos</button>
     </header>
 
+    <!-- Menu hamburguer (mobile) -->
+    <div id="menu-btn" class="menu-btn">
+        <span class="menu-icon">☰</span>
+    </div>
+
+    <!-- Menu Responsivo -->
+    <div id="menu-mobile" class="menu-mobile">
+        <button id="close-menu-btn" class="close-menu-btn">X</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="filtro.html">Produtos</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </div>
+
     <section id="filtros">
-        <label for="marca">Marca:</label>
-        <select id="marca">
-            <option value="">Selecione...</option>
-            <option value="Nike">Nike</option>
-            <option value="Adidas">Adidas</option>
-            <option value="Puma">Puma</option>
-        </select>
+        <div class="filter-group">
+            <label for="marca">Marca:</label>
+            <select id="marca">
+                <option value="">Selecione...</option>
+                <option value="Nike">Nike</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Puma">Puma</option>
+            </select>
+        </div>
 
-        <label for="cor">Cor:</label>
-        <select id="cor">
-            <option value="">Selecione...</option>
-            <option value="Preto">Preto</option>
-            <option value="Branco">Branco</option>
-            <option value="Azul">Azul</option>
-        </select>
+        <div class="filter-group">
+            <label for="cor">Cor:</label>
+            <select id="cor">
+                <option value="">Selecione...</option>
+                <option value="Preto">Preto</option>
+                <option value="Branco">Branco</option>
+                <option value="Azul">Azul</option>
+            </select>
+        </div>
 
-        <label for="tipo">Tipo:</label>
-        <select id="tipo">
-            <option value="">Selecione...</option>
-            <option value="Esportivo">Esportivo</option>
-            <option value="Casual">Casual</option>
-            <option value="Feminino">Feminino</option>
-        </select>
+        <div class="filter-group">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo">
+                <option value="">Selecione...</option>
+                <option value="Esportivo">Esportivo</option>
+                <option value="Casual">Casual</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+        </div>
 
-        <!-- Novo filtro "Gênero" -->
-        <label for="genero">Gênero:</label>
-        <select id="genero">
-            <option value="">Selecione...</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Feminino">Feminino</option>
-            <option value="Unissex">Unissex</option>
-        </select>
+        <div class="filter-group">
+            <label for="genero">Gênero:</label>
+            <select id="genero">
+                <option value="">Selecione...</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Unissex">Unissex</option>
+            </select>
+        </div>
     </section>
 
     <section id="produtos">
@@ -55,5 +82,4 @@
 
     <script src="filtro.js"></script>
 </body>
-
 </html>

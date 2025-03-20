@@ -1,0 +1,986 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Satisfy&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* overflow-y: hidden; */
+}
+
+.headerProdutos {
+  height: 80px;
+  width: 70%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 3px;
+  margin: 30px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.headerProdutos .logo {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.cart {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 3px;
+  width: 80px;
+}
+
+.fa-solid {
+  color: black;
+}
+
+.cart p {
+  height: 22px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px;
+  background-color: black;
+  color: white;
+}
+
+
+.container {
+  display: flex;
+  margin-top: 70px;
+  width: 70%;
+  margin-bottom: 30px;
+  height: 80vh;
+
+}
+
+
+#root {
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 40%;
+  border-radius: 5px;
+  background-color: #eee;
+  margin-left: 20px;
+  padding: 15px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  border-radius: 3px;
+  height: 40px;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  color: white;
+  display: flex;
+  align-items: center;
+
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  /* Muda para coluna para alinhar verticalmente */
+  align-items: center;
+  /* Centraliza os itens horizontalmente */
+  margin: 20px 0;
+  /* Margem superior e inferior */
+  padding: 10px 0;
+  /* Padding superior e inferior */
+  border-top: 1px solid #333;
+  /* Borda superior */
+}
+
+.foot h3,
+.foot h2 {
+  margin: 0;
+  /* Remove margens padrão */
+  padding: 5px 0;
+  /* Adiciona espaço vertical entre os títulos */
+}
+
+.foot h3 {
+  margin-bottom: 10px;
+  /* Espaço abaixo do h3 */
+}
+
+.foot h2 {
+  margin-bottom: 20px;
+  /* Espaço abaixo do h2 */
+}
+
+.foot button {
+  margin-top: 10px;
+  /* Espaço acima do botão */
+  padding: 10px 20px;
+  /* Tamanho do botão */
+  background-color: #4CAF50;
+  /* Cor do botão */
+  color: white;
+  /* Cor do texto do botão */
+  border: none;
+  /* Remove borda */
+  border-radius: 5px;
+  /* Arredonda os cantos do botão */
+  cursor: pointer;
+  /* Muda o cursor ao passar o mouse */
+}
+
+.foot button:hover {
+  background-color: #45a049;
+  /* Cor do botão ao passar o mouse */
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  height: 350px;
+  /* Define a altura fixa para todos os contêineres */
+  box-sizing: border-box;
+  /* Garante que padding e border não aumentem a largura e altura */
+  text-align: center;
+}
+
+.img-box {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.images {
+  max-width: 90%;
+  max-height: 100%;
+  /* Limita a altura da imagem dentro do contêiner */
+  object-fit: cover;
+  object-position: center;
+}
+
+.bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  /* Espaço entre os elementos dentro da seção */
+}
+
+.text-prod p {
+  font-size: 16px;
+  line-height: 1.2;
+  /* Ajusta o espaçamento das linhas do texto */
+  max-height: 40px;
+  /* Limita a altura do texto para manter o layout */
+  overflow: hidden;
+  /* Esconde o excesso de texto se passar da altura */
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+h2 {
+  font-size: 20px;
+  color: red;
+  margin: 5px 0;
+  /* Espaço entre o preço e o botão */
+}
+
+button {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  padding: 7px 0;
+  cursor: pointer;
+  color: white;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+  border-bottom: 1px solid #aaa;
+  border-radius: 3px;
+  margin: 10px 10px;
+}
+
+.row-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rowimg {
+  max-width: 43px;
+  max-height: 43px;
+  border-radius: 50%;
+}
+
+.item-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.title {
+  font-size: 12px;
+  text-align: left;
+  flex: 1;
+  /* Faz o título ocupar o espaço disponível */
+  margin-right: 10px;
+}
+
+.price {
+  font-size: 15px;
+  color: red;
+  text-align: right;
+  white-space: nowrap;
+  /* Evita quebra de linha no preço */
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #000000;
+  margin-left: 10px;
+}
+
+.header-cart {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  color: #000000;
+  background-color: #000000;
+}
+
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  /* Faz os textos ficarem empilhados */
+  justify-content: center;
+}
+
+.text-content p {
+  font-size: 12px;
+  margin: 0;
+  /* Remove margens para ajustar o espaço */
+}
+
+.text-content h2 {
+  font-size: 15px;
+  margin: 0;
+  /* Remove margens para ajustar o espaço */
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.fa-brands {
+  background-color: rgb(243, 243, 243);
+  color: black;
+}
+
+.scroll-section {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.conteiner-header img {
+  border-radius: 15px;
+}
+
+header {
+  background-color: black;
+  height: 20vh;
+  width: 100%;
+}
+
+.conteiner-header .itemIMG {
+  padding-bottom: 35px;
+}
+
+
+.botao-login button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.conteiner-header {
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 70px;
+  height: 100%;
+}
+
+.conteiner-header i {
+  color: black;
+  font-size: 20px;
+}
+
+.button-login {
+  display: inline-block;
+  background-color: black;
+  border: 2px solid white;
+  font-size: 20px;
+  color: white;
+  border-radius: 15px;
+  padding: 5px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/*Efeito do link*/
+
+nav {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  font-family: 100px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0px 50px 10px 0;
+  font-family: 35px;
+  font-size: 20px;
+  position: relative;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav a::after {
+  content: " ";
+  width: 0%;
+  height: 4px;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.6s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 70%;
+}
+
+/* area do mudal Suspenso */
+#user-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilo do Avatar do Usuário */
+.user-avatar {
+  position: relative;
+  cursor: pointer;
+  background-color: #ffffff;
+  /* Fundo vermelho para o avatar */
+  padding: 10px;
+  border-radius: 50%;
+  /* Deixa o avatar circular */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+
+}
+
+/* Estilo do conteúdo do dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background-color: #2c2c2c;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  z-index: 1000;
+  min-width: 250px;
+  min-height: 400px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Exibir o dropdown ao clicar no avatar */
+.user-avatar.active .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilo do nome de usuário no dropdown */
+.dropdown-content p {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 30px;
+  color: #ffcccc;
+}
+
+/* Estilo do botão de logout */
+#logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#logout-button:hover {
+  background-color: #d32f2f;
+  /* Cor do botão ao passar o mouse */
+}
+
+/* Exibir o dropdown ao passar o mouse no avatar */
+.user-avatar:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+/* Estilo ao passar o mouse no dropdown */
+.dropdown-content button:hover {
+  background-color: #d32f2f;
+  /* Cor do botão ao passar o mouse */
+}
+
+
+/* area icones do modal  */
+.social-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 5%;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  color: white;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  font-size: 24px;
+}
+
+.facebook {
+  background-color: #3b5998;
+  /* Cor do Facebook */
+}
+
+.instagram {
+  background-color: #C13584;
+  /* Cor do Instagram */
+}
+
+.whatsapp {
+  background-color: #25D366;
+  /* Cor do WhatsApp */
+}
+
+.social-button:hover {
+  opacity: 0.8;
+  /* Efeito de hover */
+}
+
+hr {
+  margin: 1rem 0;
+  color: black;
+  border: 1;
+  border-top: var(--bs-border-width) solid;
+  opacity: .25;
+}
+
+.menu-paginas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centraliza os itens no contêiner */
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  /* Define uma largura fixa */
+  margin: 0 auto;
+  /* Centraliza o contêiner na página */
+  margin-bottom: 30px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* Cada item ocupa toda a largura do contêiner */
+  margin-bottom: 11px;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  background-color: #222;
+  /* Cor de fundo para o item */
+}
+
+.menu-item ion-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #ffc107;
+  display: inline-block;
+  /* Mantém o ícone alinhado com o texto */
+}
+
+.menu-item div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Alinha o texto à esquerda, junto ao ícone */
+}
+
+.menu-item span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu-item small {
+  font-size: 10px;
+  color: #ccc;
+}
+
+.menu-item:hover {
+  background-color: #333;
+}
+
+
+/* header Responsivo */
+.funcionario {
+  padding: 19%;
+}
+
+.headerResp {
+  display: none;
+}
+
+.modalResp {
+  display: none;
+}
+
+@media screen and (max-width: 920px) {
+  #root {
+    width: 100%;
+    display: flex;
+    grid-gap: 20px;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+  }
+
+  .sidebar {
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    border: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    width: 90%;
+  }
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 3px;
+    height: 70px;
+    width: 100%;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .headerResp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  #mostrarModal {
+    background-color: #000000;
+    width: 1;
+  }
+
+  .ph-list-plus {
+    color: aliceblue;
+  }
+
+  .nomePrincipal {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 4em;
+  }
+
+  .modalResp {
+    padding-right: 30px;
+    font-size: 2em;
+    display: block;
+  }
+
+  .modalgeral {
+    display: block;
+    /* Exibe o modal */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fundo preto opaco para ocultar o que está atrás */
+    color: #fff;
+    /* Texto branco */
+    padding: 40px;
+    z-index: 2000;
+    /* Z-index alto para garantir que o modal fique sobre outros elementos */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    /* Sombra suave */
+    overflow-y: auto;
+    /* Permite rolar se o conteúdo for maior que a tela */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Transições suaves */
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  /* Classe para abrir o modal com efeito de animação */
+  .aberto {
+    opacity: 1;
+    /* Modal visível */
+    transform: translateY(0);
+    /* Modal aparece */
+  }
+
+  /* Conteúdo do modal */
+  .sabiduria {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+  }
+
+  /* Links de navegação */
+  .sabiduria a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #333;
+    /* Fundo escuro para os links */
+  }
+
+  /* Efeito de hover nos links */
+  .sabiduria a:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #000;
+  }
+
+  .conteiner-header {
+    padding-top: 0;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+    justify-content: space-between;
+  }
+
+  /* Estilos para o botão de fechar */
+  .modalfechar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  /* Botão de fechar */
+  #tan {
+    width: 150px;
+    height: 50px;
+    font-size: 1em;
+    background-color: transparent;
+    /* Cor chamativa para o botão */
+    color: #fff;
+    /* Texto branco */
+    border: 5px solid #fff;
+    border-radius: 25px;
+    /* Bordas arredondadas para o botão */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    padding-bottom: 5%;
+    /* Mostrar que é um botão clicável */
+  }
+
+  /* Efeito de hover no botão de fechar */
+  .tan:hover {
+    background-color: #040202;
+    transform: scale(1.05);
+  }
+
+  .conteiner-header i {
+    color: rgb(255, 255, 255);
+  }
+
+  button {
+    width: 50;
+    height: 50px;
+    font-size: 1em;
+    background-color: black;
+    border: 0;
+    padding: 0px;
+  }
+
+  .paginasResponsi {
+    color: #ccc;
+    padding-bottom: 15%;
+
+  }
+
+  .item {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .estrelasAbc {
+    padding-top: 25%;
+  }
+
+}
+
+
+/* Estilos para o Header */
+.header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.navbar .logo a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Estilo para o Menu */
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  transition: left 0.3s ease, background-color 0.3s ease;
+  position: static; /* Mudei de absolute para static para a versão desktop */
+}
+
+.nav-links li {
+  margin: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 600; /* Aumentei a espessura da fonte */
+  font-size: 28px; /* Aumentei o tamanho da fonte */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.1);
+}
+
+/* Menu Icon para mobile */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Ícone de fechar */
+.close-btn {
+  font-size: 40px; /* Aumentei o tamanho do ícone de fechar */
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: none; /* O ícone de fechar só aparece no mobile */
+}
+
+/* Responsividade */
+@media screen and (max-width: 920px) {
+  .nav-links {
+      display: flex;
+      flex-direction: column; /* Menu vai ser empilhado no mobile */
+      justify-content: center;
+      align-items: center;
+      position: absolute; /* Menu se move para o topo, sobrepondo a página */
+      top: 0;
+      left: -100%; /* Fica fora da tela até ser ativado */
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+  }
+
+  .nav-links.active {
+      left: 0; /* Quando ativo, o menu aparece */
+  }
+
+  .menu-icon {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 30px 0;
+  }
+
+  .nav-links li a {
+      font-size: 30px; /* Aumentei mais o tamanho da fonte no mobile */
+      color: #fff;
+      text-decoration: none;
+  }
+
+  /* Mostrar o botão de fechar quando o menu estiver ativo */
+  .nav-links.active .close-btn {
+      display: block;
+  }
+}

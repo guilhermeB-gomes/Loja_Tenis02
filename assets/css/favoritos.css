@@ -1,0 +1,117 @@
+/* Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+header button {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #e67e22;
+}
+
+/* Produtos Favoritos */
+#produtos-favoritos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.card__details {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.card__price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e67e22;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.card button:hover {
+    background-color: #e67e22;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #produtos-favoritos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    #produtos-favoritos {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}

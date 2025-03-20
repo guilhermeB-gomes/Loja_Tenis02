@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nós - ShoesShop</title>
+  <link rel="stylesheet" href="./assets/css/sobre.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <a class="logo" href="/">ShoesShop</a>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="filtro.html">Products</a></li>
+        <li><a href="Carrinho.html">Shop</a></li>
+        <li><a href="Blog.html">Blog</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- Seção Sobre Nós -->
+  <section class="about-us">
+    <div class="container">
+      <div class="about-text">
+        <h1>Sobre a ShoesShop</h1>
+        <p>
+          A ShoesShop é uma loja especializada em tênis de alta qualidade. Temos uma vasta gama de modelos
+          para todos os gostos e estilos, desde os mais casuais até os mais esportivos. Nossa missão é
+          oferecer produtos com conforto, estilo e durabilidade, sempre priorizando a satisfação de nossos clientes.
+        </p>
+        <div class="social-media">
+          <p>Conecte-se conosco:</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+        <a href="contato.html" class="btn-contact">Entre em Contato</a>
+      </div>
+      <div class="about-image">
+        <img src="https://static.vecteezy.com/system/resources/previews/007/943/687/non_2x/sneakers-shoe-logo-design-illustration-of-trending-youth-footwear-simple-funky-concept-free-vector.jpg" alt="Imagem da ShoesShop">
+      </div>
+    </div>
+  </section>
+
+  <!-- Card do Criador -->
+  <!-- Card do Criador -->
+<section class="creator-card">
+  <div class="container">
+    <h2>Conheça o Criador do Site</h2>
+    <div class="main-box">
+      <div class="content">
+        <input type="checkbox" id="check">
+        <label class="box" for="check">
+          <div class="share">SHARE</div>
+          <div class="cancel">CANCEL</div>
+        </label>
+        <div class="image-box">
+          <img src="https://th.bing.com/th/id/R.55605a262a71dea68773b77738e369c6?rik=Y0Pd8qKD3TkKvA&pid=ImgRaw&r=0" alt="Criador">
+          <div class="about">
+            <div class="details">
+              <div class="name">João Silva</div>
+              <div class="job">Desenvolvedor Web | Designer Gráfico</div>
+              <div class="icon">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 ShoesShop. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    class MobileNavbar {
+  constructor(mobileMenu, navList, navLinks) {
+    this.mobileMenu = document.querySelector(mobileMenu);
+    this.navList = document.querySelector(navList);
+    this.navLinks = document.querySelectorAll(navLinks);
+    this.activeClass = "active";
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`);
+    });
+  }
+
+  handleClick() {
+    this.navList.classList.toggle(this.activeClass);
+    this.mobileMenu.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
+
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleClick);
+  }
+
+  init() {
+    if (this.mobileMenu) {
+      this.addClickEvent();
+    }
+    return this;
+  }
+}
+
+const mobileNavbar = new MobileNavbar(
+  ".mobile-menu",
+  ".nav-list",
+  ".nav-list li",
+);
+mobileNavbar.init();
+  </script>
+
+</body>
+</html>

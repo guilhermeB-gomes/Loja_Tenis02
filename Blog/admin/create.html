@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Post</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="create-post-container">
+        <h1>Criar Novo Post</h1>
+        <form action="create_post.php" method="POST">
+            <label for="title">Título:</label>
+            <input type="text" name="title" id="title" required>
+
+            <label for="content">Conteúdo:</label>
+            <textarea name="content" id="content" required></textarea>
+
+            <button type="submit">Criar Post</button>
+        </form>
+    </div>
+</body>
+</html>

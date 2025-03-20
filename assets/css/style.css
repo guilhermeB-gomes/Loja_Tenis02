@@ -1542,3 +1542,62 @@ a.footer-link:is(:hover, :focus) {
   }
 
 }
+
+/* Estilo para o container do dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estilo do conteúdo do dropdown */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 200px; /* Pode ajustar conforme necessário */
+  border-radius: 8px;
+  padding: 10px 0;
+  top: 100%;
+  left: 0;
+}
+
+/* Estilo das opções dentro do dropdown */
+.dropdown-content a {
+  color: var(--rich-black-fogra-29);
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--bittersweet);
+  color: var(--white);
+}
+
+/* Exibe o dropdown quando o botão for clicado */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+/* Estilo do botão de ação */
+.nav-action-btn {
+  color: var(--rich-black-fogra-29);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding-block: 10px;
+  transition: var(--transition-1);
+}
+
+.nav-action-btn:is(:hover, :focus) {
+  color: var(--bittersweet);
+}
+
+.nav-action-btn ion-icon {
+  font-size: 22px;
+  --ionicon-stroke-width: 25px;
+}

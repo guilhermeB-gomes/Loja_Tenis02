@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">AdminPanel</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Ir para o site</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a href="#">Comentários</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="admin-container">
+    <h1>Gestão de Posts</h1>
+    
+    <!-- Formulário de Criação de Post -->
+    <form id="create-post-form">
+      <input type="text" id="post-title" placeholder="Título do Post" required>
+      <textarea id="post-description" placeholder="Descrição do Post" required></textarea>
+      <input type="url" id="post-image" placeholder="URL da Imagem" required>
+      <button type="submit">Criar Post</button>
+    </form>
+
+    <h2>Posts Existentes</h2>
+    <div class="posts-list" id="posts-list">
+      <!-- Lista de Posts será inserida aqui dinamicamente -->
+    </div>
+  </div>
+
+  <script src="./assets/js/admin.js"></script>
+</body>
+</html>

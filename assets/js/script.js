@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 /**
  * navbar toggle
  */
@@ -20,8 +18,6 @@ for (let i = 0; i < navElems.length; i++) {
   });
 }
 
-
-
 /**
  * header & go top btn active on page scroll
  */
@@ -38,6 +34,7 @@ window.addEventListener("scroll", function () {
     goTopBtn.classList.remove("active");
   }
 });
+
 document.addEventListener('DOMContentLoaded', function () {
   // Selecionar todos os botões de filtro
   const filterButtons = document.querySelectorAll('.filter-btn');
@@ -80,3 +77,16 @@ document.addEventListener('DOMContentLoaded', function () {
   filterProducts('all');
 });
 
+// Adiciona a funcionalidade para abrir/fechar o dropdown de Login/Register
+document.querySelectorAll('.nav-action-btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+    // Verifica se o clique é no botão que deve abrir o dropdown
+    const dropdown = this.closest('.dropdown');
+
+    // Se o dropdown estiver presente, preventDefault é chamado apenas no dropdown
+    if (dropdown) {
+      e.preventDefault(); // Previne o comportamento de navegação
+      dropdown.classList.toggle('open');
+    }
+  });
+});
